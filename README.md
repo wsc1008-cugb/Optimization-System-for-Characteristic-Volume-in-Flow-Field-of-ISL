@@ -11,6 +11,18 @@ This compressed file contains the modflow basic file of the groundwater flow mod
 
 The user enters the target time for subsequent ISL flow field simulation calculation and optimization in this text file, which can include several time nodes.
 
+### inwell-C13.txt
+
+"IJK" coordinates of injection well
+
+### puwell-C13.txt
+
+"IJK" coordinates of pumping well
+
+### ore.txt
+
+Ore body range. Can be calculated using geostatistical programs or manually delineated.
+
 ### SOO.ipynb
 
 This notebook contains the calculation method for generating cell.txt and in.txt files according to MODPATH7 (that is, the original file for calculating the flow field volume), and also includes the set operation process of the flow field volume, and finally performs particle calculation within a given range. Single-target optimization of delivery methods. Determine the optimal number of particles to be placed in different directions when calculating the in.txt file
