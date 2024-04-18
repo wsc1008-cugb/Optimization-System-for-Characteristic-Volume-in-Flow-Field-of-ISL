@@ -3,33 +3,31 @@ This repository contains the code and data for the project. Below is an overview
 
 ## Files
 The flow field volume calculation method of ISL has been included in two source code files.
-### SOO&SA.ipynb
+### C13-test_MODFLOW_text.zip
 
-This file generates exhaustive synthetic datasets. Each dataset consists of a three-feature dataset, where features are set to highly correlate in spatial context. The datasets are generated using a realistic application of unconditional Sequential Gaussian Simulation. These datasets are then exposed to different levels of noise: a base case with 0% noise, and 10%, 20%, and 30% noise levels. The percentage indicates the amount of variance contributed by the added Gaussian noise.
+This compressed file contains the modflow basic file of the groundwater flow model created earlier. In order for subsequent programs to run normally, this set of files is necessary, and users can also create them themselves using flopy.
 
-### var_reader.ipynb
+### time-C13.txt
 
-This file is used to check and read variograms. From this step, the experiment is carried out, resulting in having half of the data and only the 5th grid samplings available. The truth model will not be available from this point onward.
+The user enters the target time for subsequent ISL flow field simulation calculation and optimization in this text file, which can include several time nodes.
 
-### main_loop.ipynb
+### SOO.ipynb
 
-This is the main loop for the experiment. It involves finding the number of effective sample size and hyperparameter tuning for dense intervals of sample sizes from 2 to n_standard_bootstrap. The experimentation is done extensively for each unique dataset, and the results are compiled in accompanying .json files.
+This notebook contains the calculation method for generating cell.txt and in.txt files according to MODPATH7 (that is, the original file for calculating the flow field volume), and also includes the set operation process of the flow field volume, and finally performs particle calculation within a given range. Single-target optimization of delivery methods. Determine the optimal number of particles to be placed in different directions when calculating the in.txt file
 
-### plotter_eda.ipynb
+### SA.ipynb
 
-This file contains plotting code for exploratory data analysis used in the paper. It helps in visualizing and understanding the characteristics of the datasets.
+Based on the single-objective optimization results, sensitivity analysis of the number of particles dropped in different directions is performed.
 
-### plot_results.ipynb
+### MOO.ipynb
 
-This file contains plotting code to visualize the compiled results presented in the paper. The results from the main loop are visualized in various plots to showcase the outcomes of the experiment.
+This notebook contains the calculation method for generating cell.txt and in.txt files according to MODPATH7 (that is, the original file for calculating the flow field volume). Based on the single-objective optimization results of the particle delivery plan, the multi-objective optimization model of the liquid pumping volume-flow field external influence range is solved.
 
 ## Usage
 
-To use these files, follow the steps outlined in each notebook. Each notebook is designed to perform specific tasks and contribute to the overall project's objectives.
+To run the above program correctly, you need to include the mf2005.exe and mp7.exe solvers for calling 
 
-Feel free to explore and adapt the code as needed for your own analysis and experimentation.
-
-For any questions or inquiries, please contact [fehmi@utexas.edu].
+For any questions or inquiries, please contact [a19971008z@163.com].
 
 
 
